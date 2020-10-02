@@ -2,6 +2,7 @@ library(shiny)
 library(shinyjs)
 library(rhandsontable)
 library(plotly)
+library(shinyWidgets)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
@@ -57,12 +58,12 @@ shinyUI(fluidPage(
                                          fluidRow(numericInput(inputId = "num1", label = "Choose A Number", value = 2, min = 0), align = "center", style = "color : orange")
                                 ),
                                 tabPanel("Quiz",
-                                         fluidRow(numericInput(inputId = "num2", label = "Answer:", value = 1, min = 0), align = "center", style = "color : orange"),
+                                         fluidRow(numericInput(inputId = "num2", label = "Answer:", value = NA, min = 0), align = "center", style = "color : orange"),
                                          div(class = "col-xs-4", actionButton("submit", class =
                                                                                   "orangeBtn", "SUMBIT ANSWER")),
                                          div(class = "col-xs-3"),
-                                         div(class = "col-xs-4", actionButton("show", class =
-                                                                                  "orangeBtn", "SHOW ANSWER")),
+                                         div(class = "col-xs-4", actionButton("Show", class =
+                                                                                  "orangeBtn", "SHOW ANSWER"))
                                          
                                 )
                     )
@@ -86,7 +87,6 @@ shinyUI(fluidPage(
                     br(),
                     br(),
                     br(),
-                    
                     uiOutput("info2")
                     )
                 # width = 6
